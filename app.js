@@ -2,6 +2,7 @@ const search = document.getElementById('search');
 
 search.addEventListener('keypress', getCity);
 const w = new Weather();
+const ui = new UI();
 
 function getCity(e) {
   if (e.key === 'Enter') {
@@ -11,6 +12,7 @@ function getCity(e) {
     w.getWeather(userInput)
       .then((data) => {
         console.log(data);
+        ui.displayInfo(data);
       })
       .catch((err) => console.log(err));
   }
