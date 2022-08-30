@@ -1,19 +1,63 @@
-section.results {
-  display: none;
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100&display=swap');
+
+* {
+  font-family: 'Jost', sans-serif;
 }
 
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+section.results {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+input#search {
+  width: 20rem;
+  color: black;
+  font-weight: bold;
+  padding: 3px 9px;
+  font-size: 1rem;
+  border: #92b781;
+  border-radius: 10px;
+}
+
+::placeholder {
+  font-weight: 700;
+}
+
+h2#humidity,
+h2#wind {
+  font-size: 1rem;
+}
+
+h1#temp {
+  font-size: 1.5rem;
+  margin-bottom: 0px;
+}
 /*Classes*/
 .alert {
-  color: red;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .card {
   justify-content: center;
   align-items: center;
   background-color: #92b781e7;
-  padding: 10px 0px;
+  padding: 20px 0px;
+  width: 40rem;
+  border-radius: 1rem;
 }
 
+.center {
+  justify-content: center;
+  align-items: center;
+}
 .card:hover {
   background-color: #92b781;
 }
@@ -25,6 +69,17 @@ section.results {
   flex-flow: column nowrap;
 }
 
+/* ID's*/
+
+#description {
+  font-weight: bold;
+  color: black;
+}
+
+#icon {
+  height: 4rem;
+}
+
 /*loader*/
 
 .lds-ripple {
@@ -32,6 +87,7 @@ section.results {
   position: relative;
   width: 80px;
   height: 80px;
+  margin-top: 15px;
 }
 .lds-ripple div {
   position: absolute;
@@ -71,5 +127,16 @@ section.results {
     width: 72px;
     height: 72px;
     opacity: 0;
+  }
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 992px) {
+  input#search {
+    width: 80%;
+  }
+  .card {
+    width: 80%;
   }
 }

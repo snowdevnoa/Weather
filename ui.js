@@ -4,8 +4,9 @@ class UI {
 
     document.getElementById('city').innerText = `Weather in ${data.name}`;
     document.getElementById('temp').innerText = `${(
-      data.main.temp - 273
-    ).toFixed(1)}°C`;
+      (data.main.temp - 273) * 1.8 +
+      32
+    ).toFixed(1)}°F`;
 
     document.getElementById(
       'icon'

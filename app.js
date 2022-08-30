@@ -12,6 +12,8 @@ function getCity(e) {
     console.log(userInput);
     load.style.display = 'inline-block';
 
+    document.querySelector('.results').style.display = 'none';
+
     //Check response
     setTimeout(function () {
       w.getWeather(userInput)

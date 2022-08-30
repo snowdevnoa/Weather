@@ -10,9 +10,9 @@
     <script src="ui.js" defer></script>
     <script src="app.js" defer></script>
   </head>
-  <body>
+  <body class="flex center">
     <article class="flex box card">
-      <input type="text" id="search" />
+      <input type="text" id="search" placeholder="Search City. . ." />
       <div class="lds-ripple">
         <div></div>
         <div></div>
@@ -20,8 +20,11 @@
       <section class="results">
         <h2 id="city">Weather in city</h2>
         <h1 id="temp">#°</h1>
-        <img src="" alt="" id="icon" />
-        <div id="description"></div>
+        <div class="flex center">
+          <img src="" alt="" id="icon" />
+          <div id="description"></div>
+        </div>
+
         <h2 id="humidity">Humidity:</h2>
         <h2 id="wind">Wind:</h2>
       </section>
