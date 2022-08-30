@@ -1,4 +1,6 @@
 const search = document.getElementById('search');
+const load = document.querySelector('.lds-ripple');
+const results = document.querySelector('.results');
 
 search.addEventListener('keypress', getCity);
 const w = new Weather();
@@ -8,12 +10,22 @@ function getCity(e) {
   if (e.key === 'Enter') {
     const userInput = e.target.value;
     console.log(userInput);
+    load.style.display = 'inline-block';
 
-    w.getWeather(userInput)
-      .then((data) => {
-        console.log(data);
-        ui.displayInfo(data);
-      })
-      .catch((err) => console.log(err));
+    //Check response
+    setTimeout(function () {
+      w.getWeather(userInput)
+        .then((data) => {
+          console.log(data);
+          ui.displayInfo(data);
+          load.style.display = 'none';
+        })
+        .catch((err) => {
+          //failed to find data
+
+          load.style.display = 'none';
+          ui.showError('Please enter an existing city.', 'alert');
+        });
+    }, 2000);
   }
 }
