@@ -3,10 +3,9 @@ class UI {
     const { icon, description } = data.weather[0];
 
     document.getElementById('city').innerText = `Weather in ${data.name}`;
-    document.getElementById('temp').innerText = `${(
-      (data.main.temp - 273) * 1.8 +
-      32
-    ).toFixed(1)}°F`;
+    document.getElementById('temp').innerText = `${Math.round(
+      data.main.temp * 1.8 + 32
+    )}°F`;
 
     document.getElementById(
       'icon'
